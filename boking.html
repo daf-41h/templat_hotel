@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Awal Head -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Awal CSS External -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css" />
+    <link rel="stylesheet" href="flatpickr.css" />
+    <link rel="stylesheet" href="flatpickr_dark.css" />
+    <link rel="stylesheet" href="boking.css" />
+    <!-- Akhir CSS External -->
+    <title>Booking Room</title>
+  </head>
+  <!-- Akhir Head -->
+
+  <body>
+    <!-- Awal Navbar -->
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">
+          <img src="assets/logo.png" alt="logo" />
+        </div>
+        <div class="nav__links">
+          <a href="index.html">
+            <i class="ri-arrow-left-line"></i>
+            Kembali
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- Akhir Navbar -->
+
+    <!-- Awal Container Booking -->
+    <div class="booking-container">
+      <div class="booking-box">
+        <!-- Awal Informasi Kamar -->
+        <div class="room-info">
+          <!-- Awal Gambar Kamar -->
+          <div class="room-image">
+            <img src="https://placehold.co/600x400" alt="Room Image" />
+          </div>
+          <!-- Akhir Gambar Kamar -->
+
+          <!-- Awal Bagian Informasi -->
+          <div class="info-section">
+            <h2>Kamar Deluxe</h2>
+
+            <!-- Awal Detail Ruangan -->
+            <div class="room-details">
+              <h3>Detail Ruangan</h3>
+              <div class="detail-section">
+                <p>
+                  <i class="ri-dimensions-line"></i>
+                  Ukuran: 32m²
+                </p>
+                <p>
+                  <i class="ri-hotel-bed-line"></i>
+                  Tipe Kasur: King Size
+                </p>
+              </div>
+              <!-- Akhir Detail Ruangan -->
+
+              <!-- Awal Fasilitas -->
+              <h3>Fasilitas</h3>
+              <div class="facility-grid">
+                <p>
+                  <i class="ri-snowflake-line"></i>
+                  AC
+                </p>
+                <p>
+                  <i class="ri-tv-line"></i>
+                  TV LED
+                </p>
+                <p>
+                  <i class="ri-fridge-line"></i>
+                  Mini Bar
+                </p>
+                <p>
+                  <i class="ri-wifi-line"></i>
+                  Wi-fi
+                </p>
+              </div>
+              <!-- Akhir Fasilitas -->
+
+              <!-- Awal Informasi Tambahan -->
+              <h3>Informasi Tambahan</h3>
+              <div class="detail-section">
+                <p>
+                  <i class="ri-door-open-line"></i>
+                  Balkon: Ya
+                </p>
+                <p>
+                  <i class="ri-smoking-line"></i>
+                  Merokok: Tidak
+                </p>
+                <p>
+                  <i class="ri-user-line"></i>
+                  Maksimal: 2 orang
+                </p>
+              </div>
+              <!-- Akhir Informasi Tambahan -->
+            </div>
+          </div>
+          <!-- Akhir Bagian Informasi -->
+        </div>
+        <!-- Akhir Informasi Kamar -->
+
+        <!-- Awal Form Pemesanan -->
+        <div class="booking-form">
+          <h2>Form Pemesanan</h2>
+          <form id="bookingForm" class="booking-form">
+            <!-- Awal Input Data Pribadi -->
+            <div class="form-group">
+              <label for="name">Nama Lengkap</label>
+              <input type="text" id="name" autocomplete="off" maxlength="60" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" autocomplete="off" maxlength="30" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Nomor Telepon</label>
+              <input type="tel" id="phone" autocomplete="off" maxlength="18" required />
+            </div>
+            <!-- Akhir Input Data Pribadi -->
+
+            <!-- Awal Input Tanggal -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="checkin">Check-in</label>
+                <input type="text" id="checkin" required />
+              </div>
+
+              <div class="form-group">
+                <label for="checkout">Check-out</label>
+                <input type="text" id="checkout" required />
+              </div>
+            <!-- Akhir Input Tanggal -->
+
+            <!-- Awal Input Jumlah Tamu -->
+              <div class="form-group">
+                <label for="adults">Dewasa</label>
+                <input type="number" id="adults" value="1" required />
+              </div>
+
+              <div class="form-group">
+                <label for="children">Anak-anak</label>
+                <input type="number" id="children" value="0" />
+              </div>
+            </div>
+            <!-- Akhir Input Jumlah Tamu -->
+
+            <!-- Awal Ringkasan Harga -->
+            <div class="price-summary">
+              <div>
+                <span>Harga Dasar:</span>
+                <span id="basePrice">Rp. 0</span>
+              </div>
+              <div>
+                <span>Lama Menginap:</span>
+                <span id="stayDuration">0 Malam</span>
+              </div>
+              <div style="display: none">
+                <span>Harga Tambahan Tamu Dewasa:</span>
+                <span id="adultSurcharge">(x 0) Rp. 0</span>
+              </div>
+              <div style="display: none">
+                <span>Harga Tambahan Tamu Anak:</span>
+                <span id="childSurcharge">(x 0) Rp. 0</span>
+              </div>
+              <div style="display: none">
+                <span>Diskon:</span>
+                <span id="discount">0%</span>
+              </div>
+              <div style="display: none">
+                <span>Anda Hemat Sebesar:</span>
+                <span style="text-decoration: line-through" id="discountAmount">Rp. 0</span>
+              </div>
+              <div class="total-price">
+                <span>Total:</span>
+                <span id="totalPrice">Rp. 0</span>
+              </div>
+            </div>
+            <!-- Akhir Ringkasan Harga -->
+
+            <button type="submit" class="btn">Booking Sekarang</button>
+          </form>
+          <div id="alertContainer"></div>
+        </div>
+        <!-- Akhir Form Pemesanan -->
+      </div>
+    </div>
+    <!-- Akhir Container Booking -->
+
+    <!-- Awal Script JavaScript -->
+    <script src="flatpickr.js"></script>
+    <script src="boking.js"></script>
+    <!-- Akhir Script JavaScript -->
+  </body>
+</html>
