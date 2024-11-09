@@ -1,0 +1,1 @@
+# templat_hotel
